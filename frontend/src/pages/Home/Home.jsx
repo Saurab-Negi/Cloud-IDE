@@ -1,11 +1,11 @@
-import React from 'react'
+import FormCard from '../../components/FormCard/FormCard';
 
 const Home = () => {
   return (
-    <div>
-      Home
-    </div>
-  )
+    <>
+      <FormCard />
+    </>    
+  );
 }
 
-export default Home
+export default Home;
