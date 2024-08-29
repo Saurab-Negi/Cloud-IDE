@@ -11,7 +11,7 @@ const Sidebar = () => {
     ])
 
   return (
-    <div className='w-full max-w-xs h-screen bg-gray-700 text-white flex flex-col justify-start items-center gap-3 shadow-inner rounded-r-xl px-4 py-8'>
+    <div className='w-full max-w-xs h-screen bg-slate-800 text-white flex flex-col justify-start items-center gap-3 shadow-inner rounded-r-xl px-4 py-8'>
       
       <div className="w-full flex flex-col items-center gap-6">
         <img className='w-36 rounded-md shadow-2xl' src={logo} alt="" />

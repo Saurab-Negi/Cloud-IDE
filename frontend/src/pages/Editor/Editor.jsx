@@ -3,7 +3,7 @@ import Codebar from '../../components/Codebar/Codebar'
 
 const Editor = () => {
   return (
-    <div className='flex gap-8 items-center'>
+    <div className='flex gap-2 items-center bg-gray-900'>
       <Sidebar />
       <Codebar />
     </div>
