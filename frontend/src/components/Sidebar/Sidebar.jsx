@@ -34,9 +34,24 @@ const Sidebar = () => {
           toast.success(`${username} joined`);        
         }
         setClient(clients);
-    })
+      })
+      // disconnected
+      socketRef.current.on('disconnected', ({socketId, username}) => {
+        toast.success(`${username} left`);
+        setClient((prev) =>{
+          return prev.filter(
+            (client) => client.socketId != socketId
+          );
+        })
+      });
     }
     init();
+
+    return () =>{ // Closing the event listeners
+      socketRef.current.disconnect();
+      socketRef.current.off('joined');
+      socketRef.current.off('disconnected');
+    }
   },[])
 
     if(!location.state){

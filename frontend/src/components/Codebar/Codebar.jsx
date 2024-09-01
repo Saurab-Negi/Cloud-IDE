@@ -24,6 +24,17 @@ const Codebar = () => {
 
     editor.setSize(null, "100%");
 
+    editorRef.current.on('change', (instance, changes) =>{
+      const {origin}= changes;
+      const code= instance.getValue();
+      if(origin !== 'setValue'){
+        socketRef.current.emit('code-change', {
+          roomId,
+          code,
+        })
+      }
+    })
+
     // Cleanup CodeMirror instance on component unmount
     return () => {
       if (editor) {
